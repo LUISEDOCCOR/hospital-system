@@ -6,8 +6,13 @@
         <link rel="stylesheet" href="{{ url_for('static', filename='css/output.css') }}"/>
         <title>Hospital</title>
     </head>
-    <body>
+    <body class="px-8 md:px-4 lg:px-0">
         {% block children %}
         {% endblock %}
     </body>
+    <div class="toast toast-end">
+      <div class="alert alert-erro">
+        <span>Message sent successfully.</span>
+      </div>
+    </div>
 </html>

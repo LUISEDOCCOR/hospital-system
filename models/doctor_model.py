@@ -2,6 +2,7 @@ from models.person_model import PersonModel
 from database.extensions import db
 
 class DoctorModel (PersonModel):
+    __tablename__ = "doctors"
     id = db.Column(db.Integer, db.ForeignKey('persons.id'), primary_key=True)
     medical_specialty = db.Column(db.String(100), nullable=False)
     __mapper_args__ = {

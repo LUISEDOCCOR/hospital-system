@@ -23,3 +23,7 @@ class PersonModel(db.Model):
         self.cellPhone = cellPhone
         self.email = email
         self.gender = gender
+
+
+    def __repr__(self) -> str:
+        return f"User: {self.name} | {self.type}"
