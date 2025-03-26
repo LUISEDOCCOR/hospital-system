@@ -29,7 +29,7 @@ class AdminModel (PersonModel):
         return checkpw(password, self.password)
 
     @classmethod
-    def get_by_email (self, email) -> Optional["AdminModel"]:
+    def get_by_email (cls, email) -> Optional["AdminModel"]:
         """
         Busca un administrador por su dirección
         de correo electrónico.
