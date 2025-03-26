@@ -5,9 +5,5 @@ bp = Blueprint("auth", __name__)
 authController = AuthController()
 
 @bp.route("/", methods=["POST", "GET"])
-def auth ():
+def index ():
     return authController.index()
-
-@bp.get("/admin-panel")
-def admin_panel():
-    return ""
