@@ -2,7 +2,6 @@ from app import app
 from database.config import configure_app
 from models.admin_model import AdminModel
 import json
-from lib.bcrypt import hash_password
 
 db = configure_app()
 
@@ -19,7 +18,7 @@ if __name__ == "__main__":
                     name=admin["name"],
                     cellPhone=admin["cellPhone"],
                     email=admin["email"],
-                    password = hash_password(admin["password"])
+                    password = admin["password"]
                 )
                 db.session.add(new_admin)
 

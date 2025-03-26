@@ -1,4 +1,6 @@
 # https://medium.com/@mjpile/setting-up-inheritance-in-sqlalchemy-joined-table-26dd0cb775d8
+#https://flask-sqlalchemy.readthedocs.io/en/stable/queries/
+
 from database.extensions import db
 
 class PersonModel(db.Model):

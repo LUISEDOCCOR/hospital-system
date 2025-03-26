@@ -11,8 +11,12 @@
         {% endblock %}
     </body>
     <div class="toast toast-end">
-      <div class="alert alert-erro">
-        <span>Message sent successfully.</span>
-      </div>
+        {% with messages = get_flashed_messages() %}
+          {% if messages %}
+            <div class="alert alert-warning">
+                <span>{{ messages[0] }}</span>
+            </div>
+          {% endif %}
+        {% endwith %}
     </div>
 </html>
