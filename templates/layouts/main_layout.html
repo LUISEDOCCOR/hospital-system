@@ -1,22 +1,22 @@
 <!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" href="{{ url_for('static', filename='css/output.css') }}"/>
-        <title>Hospital</title>
-    </head>
-    <body class="px-8 md:px-4 lg:px-0">
-        {% block children %}
-        {% endblock %}
-    </body>
-    <div class="toast toast-end">
-        {% with messages = get_flashed_messages() %}
-          {% if messages %}
-            <div class="alert alert-warning">
-                <span>{{ messages[0] }}</span>
-            </div>
-          {% endif %}
-        {% endwith %}
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/output.css') }}"
+    />
+    <title>Hospital</title>
+  </head>
+  <body class="px-8 md:px-4 lg:px-0">
+    {% block children %} {% endblock %}
+  </body>
+  <div class="toast toast-end">
+    {% with messages = get_flashed_messages() %} {% if messages %}
+    <div class="alert alert-warning">
+      <span>{{ messages[0] }}</span>
     </div>
+    {% endif %} {% endwith %}
+  </div>
 </html>
