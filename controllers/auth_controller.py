@@ -1,4 +1,4 @@
-from flask import render_template, flash, request, redirect
+from flask import render_template, flash, request, redirect, session
 from flask.helpers import url_for
 from models.admin_model import AdminModel
 
@@ -25,8 +25,13 @@ class AuthController ():
                 flash("Contraseña incorrecta")
                 return render_template("pages/auth.html")
 
+            session["name"] = user.name
+            session["email"] = user.email
+            session["user_id"] = user.id
 
-            return redirect(url_for("health_check"))
-
+            if user.type == "admin":
+                return redirect(url_for("admin.index"))
+            else:
+                return redirect(url_for("doctor.index"))
 
         return render_template("pages/auth.html")

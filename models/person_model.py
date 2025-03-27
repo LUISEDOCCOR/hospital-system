@@ -2,6 +2,7 @@
 #https://flask-sqlalchemy.readthedocs.io/en/stable/queries/
 
 from database.extensions import db
+from typing import Optional
 
 class PersonModel(db.Model):
     __tablename__ = "persons"
@@ -29,3 +30,7 @@ class PersonModel(db.Model):
 
     def __repr__(self) -> str:
         return f"User: {self.name} | {self.type}"
+
+    @classmethod
+    def get_by_id(cls, id: int) -> Optional["PersonModel"]:
+        return db.session.execute(db.select(PersonModel).filter_by(id=id)).scalar_one()

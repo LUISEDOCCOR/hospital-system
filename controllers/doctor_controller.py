@@ -1,6 +1,5 @@
-from database.extensions import db
-from models.doctor_model import DoctorModel
+from flask import render_template
 
 class DoctorController ():
-    def getAll (self):
-        return ""
+    def index(self):
+        return render_template("pages/doctor/index.html")
