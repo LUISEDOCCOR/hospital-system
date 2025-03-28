@@ -1,9 +1,9 @@
 {% extends "layouts/main_layout.html" %} {% block children %}
-<div class="mx-auto max-w-7xl pt-6">
+<div class="mx-auto max-w-5xl pt-6">
   <header>
-    <div class="navbar bg-base-100 px-0">
+    <nav class="navbar bg-base-100 px-0">
       <div class="flex-1">
-        <span class="text-xl font-semibold">Hospital</span>
+        <span class="text-2xl font-semibold">Hospital</span>
       </div>
       <div class="flex-none space-x-2">
         <div class="dropdown">
@@ -79,20 +79,20 @@
             <div class="w-10 rounded-full">
               <img
                 alt="imagen de perfil del usuario {{ user_name }}"
-                src="https://ui-avatars.com/api/?name={{user_name}}"
+                src="https://ui-avatars.com/api/?name={{user_name}}&background=random"
               />
             </div>
           </div>
           <ul
             tabindex="0"
-            class="menu dropdown-content menu-sm z-[1] mt-3 w-52 rounded-box bg-base-100 p-2 shadow"
+            class="menu dropdown-content menu-sm z-[1] mt-3 w-auto rounded-box bg-base-100 p-2 shadow"
           >
             <li class="px-3">{{ user_email }}</li>
             <li><a href="{{ url_for('auth.logout') }}">Salir</a></li>
           </ul>
         </div>
       </div>
-    </div>
+    </nav>
   </header>
   {% block content %} {% endblock %}
 </div>
