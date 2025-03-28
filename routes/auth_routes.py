@@ -5,6 +5,9 @@ bp = Blueprint("auth", __name__)
 authController = AuthController()
 
 @bp.route("/", methods=["POST", "GET"])
-
 def index ():
     return authController.index()
+
+@bp.get("/")
+def logout ():
+    return authController.logout()

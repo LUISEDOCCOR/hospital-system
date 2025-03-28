@@ -35,3 +35,7 @@ class AuthController ():
                 return redirect(url_for("doctor.index"))
 
         return render_template("pages/auth.html")
+
+    def logout (self):
+        session.clear()
+        return  redirect(url_for("auth.index"))
