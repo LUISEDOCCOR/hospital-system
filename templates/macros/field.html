@@ -1,0 +1,13 @@
+{% macro render_field(label, name, type="text", placeholder="...") %}
+<div class="space-y-4">
+  <label id="{{ name }}" class="text-lg">{{ label }}</label>
+  <input
+    id="{{ name }}"
+    name="{{ name }}"
+    type="{{ type }}"
+    class="text-md w-full max-w-2xl rounded-sm border border-neutral-700 p-4 text-lg outline-none"
+    placeholder="{{ placeholder }}"
+    required
+  />
+</div>
+{% endmacro %}
