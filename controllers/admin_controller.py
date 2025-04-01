@@ -9,15 +9,18 @@ class AdminController ():
             "user_id": session["user_id"],
             "navbar_items": [
                 {
+                    "icon": "fa-solid fa-notes-medical",
                     "label": "Consultas",
                     "href": url_for("admin.index")
                 },
                 {
+                    "icon": "fa-solid fa-user-doctor",
                     "label": "Doctores",
                     "href": url_for("admin.doctors")
                 },
                 {
-                    "label": "Clientes",
+                    "icon": "fa-solid fa-person",
+                    "label": "Pacientes",
                     "href": url_for("admin.patients")
                 }
             ]

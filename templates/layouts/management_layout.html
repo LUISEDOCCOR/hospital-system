@@ -1,6 +1,29 @@
 {% extends "layouts/main_layout.html" %} {% block children %}
-<div class="mx-auto max-w-5xl pt-6">
-  <header></header>
-  <main>{% block content %} {% endblock %}</main>
+<div class="flex">
+  <nav
+    class="fixed bottom-0 top-16 z-10 hidden w-64 flex-col justify-between border-r border-neutral-700 px-12 py-4 md:flex"
+  >
+    <section>
+      <ul class="space-y-4">
+        {% for item in navbar_items %}
+        <li
+          class="flex items-center gap-3 text-lg font-semibold transition-colors duration-150 hover:text-neutral-400"
+        >
+          <i class="{{ item['icon'] }} text-xl"></i>
+          <a href="{{ item['href'] }}">{{ item["label"] }}</a>
+        </li>
+        {% endfor %}
+      </ul>
+    </section>
+    <section class="flex w-full flex-col items-center gap-3">
+      <img
+        class="aspect-square w-16 rounded-full"
+        alt="imagen de perfil del usuario {{ user_name }}"
+        src="https://ui-avatars.com/api/?name={{user_name}}&background=random"
+      />
+      <span class="text-sm">{{ user_email }}</span>
+    </section>
+  </nav>
+  <main class="ml-64 p-4">asda</main>
 </div>
 {% endblock %}
